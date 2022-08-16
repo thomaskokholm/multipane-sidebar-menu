@@ -23,14 +23,14 @@ export default function GlobalMenuSidebarFirstPane({
                   <span
                     className="group cursor-pointer"
                     onClick={() => {
-                      setFirstPaneActiveItem(item);
+                      setFirstPaneActiveItem(item.id);
                     }}
                   >
                     <span>{item.label}</span>
                     <GlobalMenuSidebarSecondPane
                       secondPaneActiveItem={secondPaneActiveItem}
                       setSecondPaneActiveItem={setSecondPaneActiveItem}
-                      expanded={item.id === firstPaneActiveItem.id}
+                      expanded={item.id === firstPaneActiveItem}
                       bgColor={item.bgColor}
                       items={item.items}
                     />

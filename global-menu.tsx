@@ -82,13 +82,15 @@ export default function GlobalMenu() {
     }
   });
 
-  console.log('items', data.sidebar.items);
+  const items = data.sidebar.items;
+
+  console.log('items', data);
 
   return (
     <div className="GlobalMenu">
       Global Menu
       <GlobalMenuSidebarFirstPane
-        items={data.sidebar.items}
+        items={items}
         firstPaneActiveItem={firstPaneActiveItem}
         setFirstPaneActiveItem={setFirstPaneActiveItem}
       />
