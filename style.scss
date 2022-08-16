@@ -131,17 +131,65 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
 .GlobalMenu {
   background-color: #03122b;
   color: #ffffff;
   height: 48px;
 }
-.GlobalMenuSidebar {
+.GlobalMenuSidebarFirstPane {
   background-color: #03122b;
   color: #ffffff;
-  position: absolute;
+  position: fixed;
   top: 48px;
   left: 0;
+  bottom: 0;
+  width: 256px;
+  max-width: 768px;
+  min-width: 256px; /* One third of max-width */
+
+  .link,
+  .group {
+    height: 48px;
+    width: 196px; /* 256px - 60px on left padding */
+    display: block;
+    color: #ffffff;
+    line-height: 48px;
+    padding-left: 60px;
+    overflow: hidden;
+    &:hover {
+      background-color: #0a71b4;
+    }
+  }
+}
+.GlobalMenuSidebarSecondPane {
+  position: fixed;
+  top: 48px;
+  left: 256px;
+  bottom: 0;
+  max-width: 256px;
+  min-width: 256px; /* One third of max-width */
+  overflow: hidden;
+  .link,
+  .group {
+    height: 48px;
+    width: 100%;
+    display: block;
+    color: #ffffff;
+    line-height: 48px;
+    padding-left: 60px;
+    &:hover {
+      background-color: #0a71b4;
+    }
+  }
+}
+
+.GlobalMenuSidebarThirdPane {
+  position: fixed;
+  top: 48px;
+  left: 256px;
   bottom: 0;
   max-width: 256px;
   min-width: 256px; /* One third of max-width */

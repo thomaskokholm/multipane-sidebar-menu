@@ -1,7 +1,9 @@
 import * as React from 'react';
-import GlobalMenuSidebar from './global-menu-sidebar';
+import GlobalMenuSidebarFirstPane from './global-menu-sidebar-first-pane';
 
 export default function GlobalMenu() {
+  const [firstPaneActiveItem, setFirstPaneActiveItem] = React.useState();
+
   const data = {
     menu: {
       items: [],
@@ -19,6 +21,7 @@ export default function GlobalMenu() {
         {
           kind: 'group',
           label: 'Group A5',
+          bgColor: '#0a71b4',
           items: [
             { kind: 'link', url: '#top', label: 'Link B1' },
             { kind: 'link', url: '#top', label: 'Link B2' },
@@ -30,6 +33,7 @@ export default function GlobalMenu() {
         {
           kind: 'group',
           label: 'Group A7',
+          bgColor: '#0a71b4',
           items: [
             { kind: 'link', url: '#top', label: 'Link B1' },
             { kind: 'link', url: '#top', label: 'Link B2' },
@@ -38,6 +42,7 @@ export default function GlobalMenu() {
             {
               kind: 'group',
               label: 'Group B5',
+              bgColor: '#0a71b4',
               items: [
                 { kind: 'link', url: '#top', label: 'Link C1' },
                 { kind: 'link', url: '#top', label: 'Link C2' },
@@ -51,6 +56,7 @@ export default function GlobalMenu() {
         {
           kind: 'group',
           label: 'Group A9',
+          bgColor: '#0a71b4',
           items: [
             { kind: 'link', url: '#top', label: 'Link C1' },
             { kind: 'link', url: '#top', label: 'Link C2' },
@@ -61,10 +67,31 @@ export default function GlobalMenu() {
       ],
     },
   };
+
+  data.sidebar.items.map((item, i) => {
+    item['id'] = 'A' + i;
+    if (item.kind === 'group' && item.items) {
+      item.items.map((item, j) => {
+        item['id'] = 'B' + j;
+        if (item.kind === 'group' && item.items) {
+          item.items.map((item, k) => {
+            item['id'] = 'C' + k;
+          });
+        }
+      });
+    }
+  });
+
+  console.log('items', data.sidebar.items);
+
   return (
     <div className="GlobalMenu">
       Global Menu
-      <GlobalMenuSidebar items={data.sidebar.items} />
+      <GlobalMenuSidebarFirstPane
+        items={data.sidebar.items}
+        firstPaneActiveItem={firstPaneActiveItem}
+        setFirstPaneActiveItem={setFirstPaneActiveItem}
+      />
     </div>
   );
 }
