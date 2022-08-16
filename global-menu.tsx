@@ -9,7 +9,11 @@ export default function GlobalMenu() {
     sidebar: {
       items: [
         { kind: 'link', url: '#top', label: 'Link A1' },
-        { kind: 'link', url: '#top', label: 'Link A2' },
+        {
+          kind: 'link',
+          url: '#top',
+          label: 'Link A2 fdsf dsf ds fds f dsf ds f fd sf fds fdsf',
+        },
         { kind: 'link', url: '#top', label: 'Link A3' },
         { kind: 'link', url: '#top', label: 'Link A4' },
         {

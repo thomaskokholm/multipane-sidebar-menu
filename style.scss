@@ -143,6 +143,19 @@ body {
   top: 48px;
   left: 0;
   bottom: 0;
-  max-width: 768px;
+  max-width: 256px;
   min-width: 256px; /* One third of max-width */
+  overflow: hidden;
+  .link,
+  .group {
+    height: 48px;
+    width: 100%;
+    display: block;
+    color: #ffffff;
+    line-height: 48px;
+    padding-left: 60px;
+    &:hover {
+      background-color: #0a71b4;
+    }
+  }
 }
