@@ -3,12 +3,18 @@ import GlobalMenuSidebarSecondPane from './global-menu-sidebar-second-pane';
 
 export default function GlobalMenuSidebarFirstPane({
   items,
+  bgColor,
+  expanded = false,
   firstPaneActiveItem,
   setFirstPaneActiveItem,
 }) {
   const [secondPaneActiveItem, setSecondPaneActiveItem] = React.useState();
+
   return (
-    <div className="GlobalMenuSidebarFirstPane">
+    <div
+      className="GlobalMenuSidebarFirstPane"
+      style={{ backgroundColor: bgColor, display: expanded ? 'block' : 'none' }}
+    >
       <ul>
         {items &&
           items.map((item, i) => {
@@ -25,8 +31,10 @@ export default function GlobalMenuSidebarFirstPane({
                     onClick={() => {
                       setFirstPaneActiveItem(item.id);
                     }}
+                    onMouseEnter={() => setFirstPaneActiveItem(item.id)}
+                    onMouseLeave={() => setFirstPaneActiveItem(undefined)}
                   >
-                    <span>{item.label}</span>
+                    <span>{item.label} &rarr;</span>
                     <GlobalMenuSidebarSecondPane
                       secondPaneActiveItem={secondPaneActiveItem}
                       setSecondPaneActiveItem={setSecondPaneActiveItem}

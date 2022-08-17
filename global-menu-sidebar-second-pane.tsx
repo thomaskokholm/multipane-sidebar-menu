@@ -29,8 +29,10 @@ export default function GlobalMenuSidebarSecondPane({
                     onClick={() => {
                       setSecondPaneActiveItem(item.id);
                     }}
+                    onMouseEnter={() => setSecondPaneActiveItem(item.id)}
+                    onMouseLeave={() => setSecondPaneActiveItem(undefined)}
                   >
-                    <span>{item.label}</span>
+                    <span>{item.label} &rarr;</span>
                     <GlobalMenuSidebarThirdPane
                       bgColor={item.bgColor}
                       items={item.items}

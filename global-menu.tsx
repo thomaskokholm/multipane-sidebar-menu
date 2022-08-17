@@ -2,6 +2,7 @@ import * as React from 'react';
 import GlobalMenuSidebarFirstPane from './global-menu-sidebar-first-pane';
 
 export default function GlobalMenu() {
+  const [sidebarOpen, setSidebarOpen] = React.useState(false);
   const [firstPaneActiveItem, setFirstPaneActiveItem] = React.useState();
 
   const data = {
@@ -9,6 +10,8 @@ export default function GlobalMenu() {
       items: [],
     },
     sidebar: {
+      bgColor: '#03122b',
+      focusColor: '#0a71b4',
       items: [
         { kind: 'link', url: '#top', label: 'Link A1' },
         {
@@ -22,11 +25,24 @@ export default function GlobalMenu() {
           kind: 'group',
           label: 'Group A5',
           bgColor: '#0a71b4',
+          focusColor: '#3b8dc3',
           items: [
             { kind: 'link', url: '#top', label: 'Link B1' },
             { kind: 'link', url: '#top', label: 'Link B2' },
-            { kind: 'link', url: '#top', label: 'Link B3' },
-            { kind: 'link', url: '#top', label: 'Link B4' },
+            {
+              kind: 'group',
+              label: 'Group B3',
+              bgColor: '#3b8dc3',
+              focusColor: '#0a71b4',
+              items: [
+                { kind: 'link', url: '#top', label: 'Link C1' },
+                { kind: 'link', url: '#top', label: 'Link C2' },
+                { kind: 'link', url: '#top', label: 'Link C3' },
+                { kind: 'link', url: '#top', label: 'Link C4' },
+                { kind: 'link', url: '#top', label: 'Link C5' },
+                { kind: 'link', url: '#top', label: 'Link C6' },
+              ],
+            },
           ],
         },
         { kind: 'link', url: '#top', label: 'Link A6' },
@@ -34,6 +50,7 @@ export default function GlobalMenu() {
           kind: 'group',
           label: 'Group A7',
           bgColor: '#0a71b4',
+          focusColor: '#3b8dc3',
           items: [
             { kind: 'link', url: '#top', label: 'Link B1' },
             { kind: 'link', url: '#top', label: 'Link B2' },
@@ -42,12 +59,12 @@ export default function GlobalMenu() {
             {
               kind: 'group',
               label: 'Group B5',
-              bgColor: '#0a71b4',
+              bgColor: '#3b8dc3',
+              focusColor: '#0a71b4',
               items: [
                 { kind: 'link', url: '#top', label: 'Link C1' },
                 { kind: 'link', url: '#top', label: 'Link C2' },
                 { kind: 'link', url: '#top', label: 'Link C3' },
-                { kind: 'link', url: '#top', label: 'Link C4' },
               ],
             },
           ],
@@ -56,12 +73,24 @@ export default function GlobalMenu() {
         {
           kind: 'group',
           label: 'Group A9',
-          bgColor: '#0a71b4',
+          bgColor: '#3b8dc3',
+          focusColor: '#0a71b4',
           items: [
             { kind: 'link', url: '#top', label: 'Link C1' },
             { kind: 'link', url: '#top', label: 'Link C2' },
             { kind: 'link', url: '#top', label: 'Link C3' },
             { kind: 'link', url: '#top', label: 'Link C4' },
+            { kind: 'link', url: '#top', label: 'Link C5' },
+          ],
+        },
+        {
+          kind: 'group',
+          label: 'Group A10',
+          bgColor: '#3b8dc3',
+          focusColor: '#0a71b4',
+          items: [
+            { kind: 'link', url: '#top', label: 'Link C1' },
+            { kind: 'link', url: '#top', label: 'Link C2' },
           ],
         },
       ],
@@ -88,8 +117,12 @@ export default function GlobalMenu() {
 
   return (
     <div className="GlobalMenu">
-      Global Menu
+      <button onClick={() => setSidebarOpen(!sidebarOpen)}>
+        Toggle sidebar
+      </button>
       <GlobalMenuSidebarFirstPane
+        bgColor={data.sidebar.bgColor}
+        expanded={sidebarOpen}
         items={items}
         firstPaneActiveItem={firstPaneActiveItem}
         setFirstPaneActiveItem={setFirstPaneActiveItem}
