@@ -146,9 +146,12 @@ body {
   top: 48px;
   left: 0;
   bottom: 0;
-  width: 256px;
-  max-width: 768px;
-  min-width: 256px; /* One third of max-width */
+  width: 100%;
+  min-width: 100%;
+  &.expandable {
+    max-width: 256px;
+    min-width: 256px; /* One third of max-width */
+  }
 
   .link,
   .group {
@@ -173,12 +176,15 @@ body {
   position: fixed;
   top: 48px;
   left: 0;
+  bottom: 0;
+  width: 100%;
+  min-width: 100%;
   &.expandable {
     left: 256px;
+    max-width: 256px;
+    min-width: 256px; /* One third of max-width */
   }
-  bottom: 0;
-  max-width: 256px;
-  min-width: 256px; /* One third of max-width */
+
   overflow: hidden;
   .link,
   .group {
@@ -203,12 +209,15 @@ body {
   position: fixed;
   top: 48px;
   left: 0;
+  bottom: 0;
+  width: 100%;
+  min-width: 100%;
   &.expandable {
     left: 512px;
+    max-width: 256px;
+    min-width: 256px; /* One third of max-width */
   }
-  bottom: 0;
-  max-width: 256px;
-  min-width: 256px; /* One third of max-width */
+
   overflow: hidden;
   .link,
   .group {
