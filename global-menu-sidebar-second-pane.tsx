@@ -1,5 +1,6 @@
 import * as React from 'react';
 import GlobalMenuSidebarThirdPane from './global-menu-sidebar-third-pane';
+import { useOnResize } from './useOnResize';
 export default function GlobalMenuSidebarSecondPane({
   items,
   bgColor,
@@ -8,12 +9,33 @@ export default function GlobalMenuSidebarSecondPane({
   setSecondPaneActiveItem,
 }) {
   const [thirdPaneActiveItem, setThirdPaneActiveItem] = React.useState();
+  const windowSize = useOnResize();
+  const onMouseAction = (e: React.MouseEvent, id: string | undefined) => {
+    e.preventDefault();
+    if (windowSize.width > 768) {
+      setSecondPaneActiveItem(id);
+    }
+  };
+
   return (
     <div
-      className="GlobalMenuSidebarSecondPane"
+      className={`GlobalMenuSidebarSecondPane ${
+        windowSize.width && windowSize.width > 768 && 'expandable'
+      } `}
       style={{ backgroundColor: bgColor, display: expanded ? 'block' : 'none' }}
     >
       <ul>
+        <li className="back-link">
+          <a
+            href="#top"
+            className="link"
+            onClick={() => {
+              console.log('go back!');
+            }}
+          >
+            &larr; Back
+          </a>
+        </li>
         {items &&
           items.map((item, i) => {
             return (
@@ -29,8 +51,8 @@ export default function GlobalMenuSidebarSecondPane({
                     onClick={() => {
                       setSecondPaneActiveItem(item.id);
                     }}
-                    onMouseEnter={() => setSecondPaneActiveItem(item.id)}
-                    onMouseLeave={() => setSecondPaneActiveItem(undefined)}
+                    onMouseEnter={(e) => onMouseAction(e, item.id)}
+                    onMouseLeave={(e) => onMouseAction(e, undefined)}
                   >
                     <span>{item.label} &rarr;</span>
                     <GlobalMenuSidebarThirdPane

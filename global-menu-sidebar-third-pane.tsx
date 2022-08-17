@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useOnResize } from './useOnResize';
 export default function GlobalMenuSidebarThirdPane({
   items,
   bgColor,
@@ -6,12 +7,26 @@ export default function GlobalMenuSidebarThirdPane({
   thirdPaneActiveItem,
   setThirdPaneActiveItem,
 }) {
+  const windowSize = useOnResize();
   return (
     <div
-      className="GlobalMenuSidebarThirdPane"
+      className={`GlobalMenuSidebarThirdPane ${
+        windowSize.width && windowSize.width > 768 && 'expandable'
+      } `}
       style={{ backgroundColor: bgColor, display: expanded ? 'block' : 'none' }}
     >
       <ul>
+        <li className="back-link">
+          <a
+            href="#top"
+            className="link"
+            onClick={() => {
+              console.log('go back!');
+            }}
+          >
+            &larr; Back
+          </a>
+        </li>
         {items &&
           items.map((item, i) => {
             return (
