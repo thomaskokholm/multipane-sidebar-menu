@@ -34,7 +34,8 @@ export default function GlobalMenu() {
             { kind: 'link', url: '#top', label: 'Link B2' },
             {
               kind: 'group',
-              label: 'Group B3',
+              label:
+                'Group B3 jd sfjkj kf dsfjfjkf df dg d gfd gfd gsdff ergfd gf dg ',
               bgColor: '#3b8dc3',
               focusColor: '#0a71b4',
               items: [
