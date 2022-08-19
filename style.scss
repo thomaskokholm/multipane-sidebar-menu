@@ -148,9 +148,15 @@ body {
   bottom: 0;
   width: 100%;
   min-width: 100%;
-  &.expandable {
+
+  /* &.expandable {
     max-width: 320px;
-    min-width: 320px; /* One third of max-width */
+    min-width: 320px;
+  } */
+
+  @media only screen and (min-width: 768px) {
+    max-width: 320px;
+    min-width: 320px;
   }
 
   .link,
@@ -188,6 +194,9 @@ body {
   min-width: 100%;
   &.expandable {
     left: 320px;
+  }
+
+  @media only screen and (min-width: 768px) {
     max-width: 320px;
     min-width: 320px;
   }
