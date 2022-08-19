@@ -149,14 +149,14 @@ body {
   width: 100%;
   min-width: 100%;
   &.expandable {
-    max-width: 256px;
-    min-width: 256px; /* One third of max-width */
+    max-width: 320px;
+    min-width: 320px; /* One third of max-width */
   }
 
   .link,
   .group {
     height: 48px;
-    width: 196px; /* 256px - 60px on left padding */
+    width: 260px; /* 320px - 60px on left padding */
     display: block;
     color: #ffffff;
     line-height: 48px;
@@ -166,7 +166,7 @@ body {
       background-color: #0a71b4;
     }
   }
-  @media only screen and (min-width: 769px) {
+  @media only screen and (min-width: 1024px) {
     .back-link {
       display: none;
     }
@@ -180,9 +180,9 @@ body {
   width: 100%;
   min-width: 100%;
   &.expandable {
-    left: 256px;
-    max-width: 256px;
-    min-width: 256px; /* One third of max-width */
+    left: 320px;
+    max-width: 320px;
+    min-width: 320px;
   }
 
   overflow: hidden;
@@ -198,7 +198,7 @@ body {
       background-color: #3b8dc3;
     }
   }
-  @media only screen and (min-width: 769px) {
+  @media only screen and (min-width: 1024px) {
     .back-link {
       display: none;
     }
@@ -213,9 +213,9 @@ body {
   width: 100%;
   min-width: 100%;
   &.expandable {
-    left: 512px;
-    max-width: 256px;
-    min-width: 256px; /* One third of max-width */
+    left: 640px;
+    max-width: 320px;
+    min-width: 320px;
   }
 
   overflow: hidden;
@@ -231,7 +231,7 @@ body {
       background-color: #085a90;
     }
   }
-  @media only screen and (min-width: 769px) {
+  @media only screen and (min-width: 1024px) {
     .back-link {
       display: none;
     }

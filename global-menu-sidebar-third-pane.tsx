@@ -1,18 +1,15 @@
 import * as React from 'react';
-import { useOnResize } from './useOnResize';
 export default function GlobalMenuSidebarThirdPane({
   items,
   bgColor,
   expanded = false,
+  expandable = false,
   thirdPaneActiveItem,
   setThirdPaneActiveItem,
 }) {
-  const windowSize = useOnResize();
   return (
     <div
-      className={`GlobalMenuSidebarThirdPane ${
-        windowSize.width && windowSize.width > 768 && 'expandable'
-      } `}
+      className={`GlobalMenuSidebarThirdPane ${expandable && 'expandable'} `}
       style={{ backgroundColor: bgColor, display: expanded ? 'block' : 'none' }}
     >
       <ul>

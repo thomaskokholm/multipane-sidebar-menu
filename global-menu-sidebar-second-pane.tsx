@@ -1,27 +1,24 @@
 import * as React from 'react';
 import GlobalMenuSidebarThirdPane from './global-menu-sidebar-third-pane';
-import { useOnResize } from './useOnResize';
 export default function GlobalMenuSidebarSecondPane({
   items,
   bgColor,
   expanded = false,
+  expandable = false,
   secondPaneActiveItem,
   setSecondPaneActiveItem,
 }) {
   const [thirdPaneActiveItem, setThirdPaneActiveItem] = React.useState();
-  const windowSize = useOnResize();
   const onMouseAction = (e: React.MouseEvent, id: string | undefined) => {
     e.preventDefault();
-    if (windowSize.width > 768) {
+    if (expandable) {
       setSecondPaneActiveItem(id);
     }
   };
 
   return (
     <div
-      className={`GlobalMenuSidebarSecondPane ${
-        windowSize.width && windowSize.width > 768 && 'expandable'
-      } `}
+      className={`GlobalMenuSidebarSecondPane ${expandable && 'expandable'} `}
       style={{ backgroundColor: bgColor, display: expanded ? 'block' : 'none' }}
     >
       <ul>
@@ -59,6 +56,7 @@ export default function GlobalMenuSidebarSecondPane({
                       bgColor={item.bgColor}
                       items={item.items}
                       expanded={item.id === secondPaneActiveItem}
+                      expandable={expandable}
                       thirdPaneActiveItem={thirdPaneActiveItem}
                       setThirdPaneActiveItem={setThirdPaneActiveItem}
                     />
