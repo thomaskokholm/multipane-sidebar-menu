@@ -1,12 +1,13 @@
 import * as React from 'react';
 import GlobalMenuSidebarFirstPane from './global-menu-sidebar-first-pane';
+import GlobalMenuSidebarPane from './global-menu-sidebar-pane';
 import { useOnResize } from './useOnResize';
 
 export default function GlobalMenu() {
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
   const [firstPaneActiveItem, setFirstPaneActiveItem] = React.useState();
 
-  const windowSize = useOnResize();
+  //const windowSize = useOnResize();
 
   const data = {
     menu: {
@@ -124,14 +125,7 @@ export default function GlobalMenu() {
       <button onClick={() => setSidebarOpen(!sidebarOpen)}>
         Toggle sidebar
       </button>
-      <GlobalMenuSidebarFirstPane
-        bgColor={data.sidebar.bgColor}
-        expanded={sidebarOpen}
-        expandable={windowSize.width && windowSize.width >= 1024 ? true : false}
-        items={items}
-        firstPaneActiveItem={firstPaneActiveItem}
-        setFirstPaneActiveItem={setFirstPaneActiveItem}
-      />
+      <GlobalMenuSidebarPane expanded={sidebarOpen} items={items} />
     </div>
   );
 }
