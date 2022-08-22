@@ -18,7 +18,7 @@ export default function GlobalMenuSidebarSecondPane({
 
   return (
     <div
-      className={`GlobalMenuSidebarSecondPane ${expandable && 'expandable'} `}
+      className={`GlobalMenuSidebarPane GlobalMenuSidebarSecondPane ${expandable && 'expandable'} `}
       style={{ backgroundColor: bgColor, display: expanded ? 'block' : 'none' }}
     >
       <ul>

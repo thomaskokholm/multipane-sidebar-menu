@@ -139,9 +139,8 @@ body {
   color: #ffffff;
   height: 48px;
 }
-.GlobalMenuSidebarFirstPane {
+.GlobalMenuSidebarPane {
   background-color: #03122b;
-  color: #ffffff;
   position: fixed;
   top: 48px;
   left: 0;
@@ -149,43 +148,102 @@ body {
   width: 100%;
   min-width: 100%;
 
-  /* &.expandable {
+  &.expandable {
     max-width: 320px;
     min-width: 320px;
-  } */
+  }
 
   @media only screen and (min-width: 768px) {
     max-width: 320px;
     min-width: 320px;
   }
 
-  .link,
-  .group {
-    height: 48px;
-    width: 100%;
-    display: block;
-    color: #ffffff;
-    line-height: 48px;
-    padding-left: 60px;
-    padding-right: 16px;
-    overflow: hidden;
-    &:hover {
-      background-color: #0a71b4;
-    }
-  }
   @media only screen and (min-width: 1024px) {
     .back-link {
       display: none;
     }
   }
-  &.expandable {
-    .link,
+
+  .link,
+  .group {
+    height: 48px;
+    width: 100%;
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    color: #a5acbb;
+    line-height: 48px;
+    &:hover {
+      color: #ffffff;
+    }
+  }
+  .link {
+    overflow: hidden;
+    &__label {
+      color: #a5acbb;
+      &:hover {
+        color: #ffffff;
+      }
+      width: 100%;
+      margin-right: 24px;
+    }
+  }
+
+  .group {
+    display: flex;
+    &__label {
+      width: 100%;
+      padding-right: 24px;
+    }
+    &__arrow {
+      width: 32px;
+      height: 48px;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    overflow: hidden;
+  }
+
+  &.GlobalMenuSidebarFirstPane {
+    .link {
+      &__label {
+        margin-left: 48px;
+      }
+    }
     .group {
-      width: 244px; /* 320px - (60px on left padding + 16 on right padding) */
+      &__label {
+        padding-left: 48px;
+      }
+    }
+  }
+  &.GlobalMenuSidebarSecondPane,
+  &.GlobalMenuSidebarThirdPane {
+    .link {
+      &__label {
+        margin-left: 24px;
+      }
+    }
+    .group {
+      &__label {
+        padding-left: 24px;
+      }
+    }
+  }
+  &.GlobalMenuSidebarSecondPane {
+    &.expandable {
+      left: 320px;
+    }
+  }
+
+  &.GlobalMenuSidebarThirdPane {
+    &.expandable {
+      left: 640px;
     }
   }
 }
-.GlobalMenuSidebarSecondPane {
+
+/* .GlobalMenuSidebarSecondPane {
   position: fixed;
   top: 48px;
   left: 0;
@@ -265,3 +323,4 @@ body {
     }
   }
 }
+ */

@@ -9,7 +9,9 @@ export default function GlobalMenuSidebarThirdPane({
 }) {
   return (
     <div
-      className={`GlobalMenuSidebarThirdPane ${expandable && 'expandable'} `}
+      className={`GlobalMenuSidebarPane GlobalMenuSidebarThirdPane ${
+        expandable && 'expandable'
+      } `}
       style={{ backgroundColor: bgColor, display: expanded ? 'block' : 'none' }}
     >
       <ul>

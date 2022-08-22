@@ -20,7 +20,9 @@ export default function GlobalMenuSidebarFirstPane({
 
   return (
     <div
-      className={`GlobalMenuSidebarFirstPane ${expandable && 'expandable'} `}
+      className={`GlobalMenuSidebarPane GlobalMenuSidebarFirstPane ${
+        expandable && 'expandable'
+      } `}
       style={{ backgroundColor: bgColor, display: expanded ? 'block' : 'none' }}
     >
       <ul>
@@ -29,12 +31,14 @@ export default function GlobalMenuSidebarFirstPane({
             return (
               <li key={i}>
                 {item.kind === 'link' && (
-                  <a href={item.url} className="link">
-                    {item.label}
-                  </a>
+                  <div className="link">
+                    <a href={item.url} className="link__label">
+                      {item.label}
+                    </a>
+                  </div>
                 )}
                 {item.kind === 'group' && (
-                  <span
+                  <div
                     className="group cursor-pointer"
                     onClick={() => {
                       setFirstPaneActiveItem(item.id);
@@ -42,7 +46,8 @@ export default function GlobalMenuSidebarFirstPane({
                     onMouseEnter={(e) => onMouseAction(e, item.id)}
                     onMouseLeave={(e) => onMouseAction(e, undefined)}
                   >
-                    <span>{item.label} &rarr;</span>
+                    <div className="group__label">{item.label}</div>
+                    <div className="group__arrow"> &rarr;</div>
                     <GlobalMenuSidebarSecondPane
                       secondPaneActiveItem={secondPaneActiveItem}
                       setSecondPaneActiveItem={setSecondPaneActiveItem}
@@ -51,7 +56,7 @@ export default function GlobalMenuSidebarFirstPane({
                       bgColor={item.bgColor}
                       items={item.items}
                     />
-                  </span>
+                  </div>
                 )}
               </li>
             );
