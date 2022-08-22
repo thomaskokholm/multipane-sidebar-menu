@@ -1,13 +1,8 @@
 import * as React from 'react';
-import GlobalMenuSidebarFirstPane from './global-menu-sidebar-first-pane';
 import GlobalMenuSidebarPane from './global-menu-sidebar-pane';
-import { useOnResize } from './useOnResize';
 
 export default function GlobalMenu() {
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
-  const [firstPaneActiveItem, setFirstPaneActiveItem] = React.useState();
-
-  //const windowSize = useOnResize();
 
   const data = {
     menu: {
