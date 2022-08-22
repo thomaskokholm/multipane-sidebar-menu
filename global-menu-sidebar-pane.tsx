@@ -74,83 +74,82 @@ export default function GlobalMenuSidebarPane({ items, expanded = false }) {
     );
   };
 
+  const Pane = ({
+    expanded = false,
+    bgColor = '#03122b',
+    className,
+    children,
+  }: {
+    expanded: boolean;
+    bgColor?: string;
+    className?: string | Array<string>;
+    children?: React.ReactNode;
+  }) => {
+    return (
+      <div
+        className={`GlobalMenuSidebarPane ${className} ${
+          windowSize.width && windowSize.width >= 1024 ? 'expandable' : ''
+        } `}
+        style={{
+          backgroundColor: bgColor,
+          display: expanded ? 'block' : 'none',
+        }}
+      >
+        <ul>{children}</ul>
+      </div>
+    );
+  };
+
   {
     /* FIRST PANE CONTENT START */
   }
   return (
-    <div
-      className={`GlobalMenuSidebarPane GlobalMenuSidebarFirstPane ${
-        windowSize.width && windowSize.width >= 1024 ? 'expandable' : ''
-      } `}
-      style={{ backgroundColor: bgColor, display: expanded ? 'block' : 'none' }}
-    >
-      <ul>
-        {items &&
-          items.map((firstItem, i) => {
-            return (
-              <PaneItem item={firstItem} idx={'A' + i} level={1}>
-                {/* SECOND PANE CONTENT START */}
-                <div
-                  className={`GlobalMenuSidebarPane GlobalMenuSidebarSecondPane ${
-                    windowSize.width && windowSize.width >= 1024
-                      ? 'expandable'
-                      : ''
-                  } `}
-                  style={{
-                    backgroundColor: bgColor,
-                    display:
-                      secondPaneActiveItem &&
-                      secondPaneActiveItem === firstItem.id
-                        ? 'block'
-                        : 'none',
-                  }}
-                >
-                  <ul>
-                    {firstItem.items &&
-                      firstItem.items.map((secondItem, j) => {
-                        return (
-                          <PaneItem item={secondItem} idx={'B' + j} level={2}>
-                            {/* THIRD PANE CONTENT  START */}
-                            <div
-                              className={`GlobalMenuSidebarPane GlobalMenuSidebarThirdPane ${
-                                windowSize.width && windowSize.width >= 1024
-                                  ? 'expandable'
-                                  : ''
-                              } `}
-                              style={{
-                                backgroundColor: bgColor,
-                                display:
-                                  thirdPaneActiveItem &&
-                                  thirdPaneActiveItem === secondItem.id
-                                    ? 'block'
-                                    : 'none',
-                              }}
-                            >
-                              <ul>
-                                {secondItem.items &&
-                                  secondItem.items.map((thirdItem, k) => {
-                                    return (
-                                      <PaneItem
-                                        item={thirdItem}
-                                        idx={'C' + k}
-                                        level={3}
-                                      />
-                                    );
-                                  })}
-                              </ul>
-                            </div>
-                            {/* THIRD PANE CONTENT  END */}
-                          </PaneItem>
-                        );
-                      })}
-                  </ul>
-                </div>
-                {/* SECOND PANE CONTENT  END */}
-              </PaneItem>
-            );
-          })}
-      </ul>
-    </div>
+    <Pane expanded={expanded} className="GlobalMenuSidebarFirstPane">
+      {items &&
+        items.map((firstItem, i) => {
+          return (
+            <PaneItem item={firstItem} idx={'A' + i} level={1}>
+              {/* SECOND PANE CONTENT START */}
+
+              <Pane
+                className="GlobalMenuSidebarSecondPane"
+                expanded={
+                  secondPaneActiveItem && secondPaneActiveItem === firstItem.id
+                }
+              >
+                {firstItem.items &&
+                  firstItem.items.map((secondItem, j) => {
+                    return (
+                      <PaneItem item={secondItem} idx={'B' + j} level={2}>
+                        {/* THIRD PANE CONTENT  START */}
+                        <Pane
+                          className="GlobalMenuSidebarThirdPane"
+                          expanded={
+                            thirdPaneActiveItem &&
+                            thirdPaneActiveItem === secondItem.id
+                          }
+                        >
+                          {secondItem.items &&
+                            secondItem.items.map((thirdItem, k) => {
+                              return (
+                                <PaneItem
+                                  item={thirdItem}
+                                  idx={'C' + k}
+                                  level={3}
+                                />
+                              );
+                            })}
+                        </Pane>
+                        {/* THIRD PANE CONTENT  END */}
+                      </PaneItem>
+                    );
+                  })}
+              </Pane>
+              {/* SECOND PANE CONTENT  END */}
+            </PaneItem>
+          );
+        })}
+    </Pane>
   );
   {
     /* FIRST PANE CONTENT  END */
