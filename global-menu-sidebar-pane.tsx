@@ -26,7 +26,7 @@ export default function GlobalMenuSidebarPane({ items, expanded = false }) {
     id: string | undefined
   ) => {
     e.preventDefault();
-    if (id && windowSize.width && windowSize.width >= 1024) {
+    if (windowSize.width && windowSize.width >= 1024) {
       if (paneLevel === 1) {
         setSecondPaneActiveItem(id);
       } else if (paneLevel === 2) {
