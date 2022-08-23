@@ -144,9 +144,10 @@ body {
   position: fixed;
   top: 48px;
   left: 0;
-  bottom: 0;
+  bottom: 64px; // due to the bottom nav height of 64px
   width: 100%;
   min-width: 100%;
+  overflow-y: auto;
 
   &.expandable {
     max-width: 320px;
@@ -156,6 +157,8 @@ body {
   @media only screen and (min-width: 768px) {
     max-width: 320px;
     min-width: 320px;
+    bottom: 0; // when tablet there is no bottom nav so the bottom is set to 0
+    overflow-y: hidden;
   }
 
   @media only screen and (min-width: 1024px) {
@@ -240,5 +243,22 @@ body {
     &.expandable {
       left: 640px;
     }
+  }
+}
+.GlobalMenuBottomNav {
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
+  background: #03122b;
+  height: 64px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  line-height: 64px;
+  .link {
   }
 }

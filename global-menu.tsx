@@ -1,4 +1,5 @@
 import * as React from 'react';
+import GlobalMenuBottomNav from './global-menu-bottom-nav';
 import GlobalMenuSidebarPane from './global-menu-sidebar-pane';
 
 export default function GlobalMenu() {
@@ -93,6 +94,16 @@ export default function GlobalMenu() {
             { kind: 'link', url: '#top', label: 'Link C2' },
           ],
         },
+        { kind: 'link', url: '#top', label: 'Link A11' },
+        { kind: 'link', url: '#top', label: 'Link A12' },
+        { kind: 'link', url: '#top', label: 'Link A13' },
+        { kind: 'link', url: '#top', label: 'Link A14' },
+        { kind: 'link', url: '#top', label: 'Link A15' },
+        { kind: 'link', url: '#top', label: 'Link A16' },
+        { kind: 'link', url: '#top', label: 'Link A17' },
+        { kind: 'link', url: '#top', label: 'Link A18' },
+        { kind: 'link', url: '#top', label: 'Link A19' },
+        { kind: 'link', url: '#top', label: 'Link A20' },
       ],
     },
   };
@@ -121,6 +132,7 @@ export default function GlobalMenu() {
         Toggle sidebar
       </button>
       <GlobalMenuSidebarPane expanded={sidebarOpen} items={items} />
+      <GlobalMenuBottomNav items={items} />
     </div>
   );
 }
