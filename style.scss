@@ -245,6 +245,42 @@ body {
     }
   }
 }
+
+.GlobalMenuTopNav {
+  background: #03122b;
+  height: 64px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  line-height: 64px;
+  .link {
+    color: #ffffff;
+  }
+}
+
+.GlobalMenuTopSubNav {
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
+  background: purple;
+  height: 64px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  line-height: 64px;
+  .link {
+    color: #ffffff;
+  }
+}
+
 .GlobalMenuBottomNav {
   @media only screen and (min-width: 768px) {
     display: none;

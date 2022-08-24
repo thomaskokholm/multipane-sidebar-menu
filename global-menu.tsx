@@ -1,6 +1,7 @@
 import * as React from 'react';
 import GlobalMenuBottomNav from './global-menu-bottom-nav';
 import GlobalMenuSidebarPane from './global-menu-sidebar-pane';
+import GlobalMenuTopNav from './global-menu-top-nav';
 
 export default function GlobalMenu() {
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
@@ -9,7 +10,60 @@ export default function GlobalMenu() {
     menu: {
       items: [],
     },
+    topNav: {
+      items: [
+        { kind: 'link', url: '#top', label: 'Link T1' },
+        {
+          kind: 'link',
+          url: '#top',
+          label: 'Link T2 with a really long long long long label',
+        },
+        { kind: 'link', url: '#top', label: 'Link T3' },
+        { kind: 'link', url: '#top', label: 'Link T4' },
+        {
+          kind: 'group',
+          label: 'Group T5',
+          bgColor: '#0a71b4',
+          focusColor: '#3b8dc3',
+          items: [
+            { kind: 'link', url: '#top', label: 'Sub link S1' },
+            { kind: 'link', url: '#top', label: 'Sub link S2' },
+            { kind: 'link', url: '#top', label: 'Sub link S3' },
+            {
+              kind: 'link',
+              url: '#top',
+              label: 'Sub link S4 with a really long long long long label',
+            },
+            { kind: 'link', url: '#top', label: 'Sub link S5' },
+            { kind: 'link', url: '#top', label: 'Sub link S6' },
+            {
+              kind: 'link',
+              url: '#top',
+              label: 'Sub link S7 with a really long long long long label',
+            },
+            { kind: 'link', url: '#top', label: 'Sub link S8' },
+            { kind: 'link', url: '#top', label: 'Sub link S9' },
+            { kind: 'link', url: '#top', label: 'Sub link S10' },
+            { kind: 'link', url: '#top', label: 'Sub link S10' },
+          ],
+        },
+      ],
+    },
+    bottomNav: {
+      items: [
+        { kind: 'link', url: '#top', label: 'Link S1' },
+        {
+          kind: 'link',
+          url: '#top',
+          label: 'Link S2 with a really long long long long label',
+        },
+        { kind: 'link', url: '#top', label: 'Link S3' },
+        { kind: 'link', url: '#top', label: 'Link S4' },
+        { kind: 'link', url: '#top', label: 'Link 54' },
+      ],
+    },
     sidebar: {
+      backLabel: 'Back',
       bgColor: '#03122b',
       focusColor: '#0a71b4',
       items: [
@@ -122,17 +176,20 @@ export default function GlobalMenu() {
     }
   });
 
-  const items = data.sidebar.items;
+  const topNavItems = data.topNav.items;
+  const bottomNavItems = data.bottomNav.items;
+  const sidebarItems = data.sidebar.items;
 
   console.log('items', data);
 
   return (
     <div className="GlobalMenu">
+      <GlobalMenuTopNav items={topNavItems} />
       <button onClick={() => setSidebarOpen(!sidebarOpen)}>
         Toggle sidebar
       </button>
-      <GlobalMenuSidebarPane expanded={sidebarOpen} items={items} />
-      <GlobalMenuBottomNav items={items} />
+      <GlobalMenuSidebarPane expanded={sidebarOpen} items={sidebarItems} />
+      <GlobalMenuBottomNav items={bottomNavItems} />
     </div>
   );
 }
