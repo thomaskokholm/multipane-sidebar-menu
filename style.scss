@@ -256,7 +256,7 @@ body {
   right: 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   line-height: 56px;
 
   @media only screen and (min-width: 768px) {
@@ -347,5 +347,12 @@ body {
     &:hover {
       color: #ffffff;
     }
+  }
+}
+
+// DELETE AGAIN
+body {
+  p {
+    margin-bottom: 24px;
   }
 }
