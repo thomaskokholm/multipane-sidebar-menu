@@ -266,6 +266,7 @@ body {
 
   .main-links {
     display: none;
+    overflow-y: hidden;
   }
   @media only screen and (min-width: 768px) {
     .main-links {
@@ -303,8 +304,9 @@ body {
 
   .main-links {
     display: flex;
-
     justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
   .link {
     color: #a5acbb;
@@ -333,8 +335,9 @@ body {
 
   .main-links {
     display: flex;
-    flex-direction: row;
     justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
 
   .link {
