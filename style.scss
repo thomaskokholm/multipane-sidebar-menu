@@ -322,6 +322,7 @@ body {
   @media only screen and (min-width: 768px) {
     display: none;
   }
+  border-top: 1px solid #505b73;
   background: #03122b;
   height: 64px;
   position: fixed;
@@ -341,6 +342,7 @@ body {
   }
 
   .link {
+    min-width: 75px; // 375px (min supported width of viewport devided by 5 items = 75px
     color: #a5acbb;
     &:hover {
       color: #ffffff;
