@@ -4,11 +4,11 @@ export default function GlobalMenuTopSubNav({ items }) {
   return (
     <div className="GlobalMenuTopSubNav">
       {items && (
-        <ul>
+        <nav className="main-links">
           {items.map((item) => {
             return <div className="link">{item.label}</div>;
           })}
-        </ul>
+        </nav>
       )}
     </div>
   );

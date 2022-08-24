@@ -3,10 +3,13 @@ import * as React from 'react';
 export default function GlobalMenuBottomNav({ items }) {
   return (
     <div className="GlobalMenuBottomNav">
-      <div className="link">Home</div>
-      <div className="link">World Cup</div>
-      <div className="link">Originals</div>
-      <div className="link">Menu</div>
+      {items && (
+        <nav className="main-links">
+          {items.map((item) => {
+            return <div className="link">{item.label}</div>;
+          })}
+        </nav>
+      )}
     </div>
   );
 }

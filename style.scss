@@ -142,7 +142,7 @@ body {
 .GlobalMenuSidebarPane {
   background-color: #03122b;
   position: fixed;
-  top: 48px;
+  top: 56px;
   left: 0;
   bottom: 64px; // due to the bottom nav height of 64px
   width: 100%;
@@ -157,7 +157,8 @@ body {
   @media only screen and (min-width: 768px) {
     max-width: 320px;
     min-width: 320px;
-    bottom: 0; // when tablet there is no bottom nav so the bottom is set to 0
+    bottom: 0; // when tablet or higher there is no bottom nav so the bottom is set to 0
+    top: 64px; // when ever tablet or larger the topnav is 64px height and not 56px
     overflow-y: hidden;
   }
 
@@ -248,17 +249,39 @@ body {
 
 .GlobalMenuTopNav {
   background: #03122b;
-  height: 64px;
+  height: 56px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  line-height: 64px;
+  justify-content: space-between;
+  line-height: 56px;
+
+  @media only screen and (min-width: 768px) {
+    height: 64px;
+    line-height: 64px;
+  }
+
+  .main-links {
+    display: none;
+  }
+  @media only screen and (min-width: 768px) {
+    .main-links {
+      justify-content: flex-start;
+      display: flex;
+      overflow-x: auto;
+    }
+  }
+
   .link {
-    color: #ffffff;
+    color: #a5acbb;
+    &:hover {
+      color: #ffffff;
+    }
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -272,12 +295,24 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   line-height: 64px;
+
+  .main-links {
+    display: flex;
+
+    justify-content: flex-start;
+  }
   .link {
-    color: #ffffff;
+    color: #a5acbb;
+    &:hover {
+      color: #ffffff;
+    }
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
 
@@ -293,8 +328,19 @@ body {
   right: 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   line-height: 64px;
+
+  .main-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
   .link {
+    color: #a5acbb;
+    &:hover {
+      color: #ffffff;
+    }
   }
 }

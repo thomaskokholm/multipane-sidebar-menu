@@ -47,6 +47,11 @@ export default function GlobalMenu() {
             { kind: 'link', url: '#top', label: 'Sub link S10' },
           ],
         },
+        { kind: 'link', url: '#top', label: 'Link T6' },
+        { kind: 'link', url: '#top', label: 'Link T7' },
+        { kind: 'link', url: '#top', label: 'Link T8' },
+        { kind: 'link', url: '#top', label: 'Link T9' },
+        { kind: 'link', url: '#top', label: 'Link T10' },
       ],
     },
     bottomNav: {
@@ -184,10 +189,12 @@ export default function GlobalMenu() {
 
   return (
     <div className="GlobalMenu">
-      <GlobalMenuTopNav items={topNavItems} />
-      <button onClick={() => setSidebarOpen(!sidebarOpen)}>
-        Toggle sidebar
-      </button>
+      <GlobalMenuTopNav
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+        items={topNavItems}
+      />
+
       <GlobalMenuSidebarPane expanded={sidebarOpen} items={sidebarItems} />
       <GlobalMenuBottomNav items={bottomNavItems} />
     </div>

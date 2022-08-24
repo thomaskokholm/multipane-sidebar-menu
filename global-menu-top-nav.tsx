@@ -1,12 +1,22 @@
 import * as React from 'react';
 
-export default function GlobalMenuTopNav({ items }) {
+export default function GlobalMenuTopNav({
+  items,
+  sidebarOpen,
+  setSidebarOpen,
+}) {
   return (
     <div className="GlobalMenuTopNav">
-      <div className="link">Home</div>
-      <div className="link">World Cup</div>
-      <div className="link">Originals</div>
-      <div className="link">Menu</div>
+      <button onClick={() => setSidebarOpen(!sidebarOpen)}>
+        Toggle sidebar
+      </button>
+      {items && (
+        <nav className="main-links">
+          {items.map((item) => {
+            return <div className="link">{item.label}</div>;
+          })}
+        </nav>
+      )}
     </div>
   );
 }
