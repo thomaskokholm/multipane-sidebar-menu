@@ -48,14 +48,14 @@ export default function GlobalMenuSidebarPane({ items, expanded = false }) {
   }) => {
     return (
       <li key={idx}>
-        {item.kind === 'link' && (
+        {item.entryType === 'link' && (
           <div className="link">
             <a href={item.url} className="link__label">
               {item.label}
             </a>
           </div>
         )}
-        {item.kind === 'group' && (
+        {item.entryType === 'group' && (
           <div
             className="group cursor-pointer"
             onClick={() => {

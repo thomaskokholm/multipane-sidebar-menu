@@ -15,7 +15,7 @@ export default function GlobalMenuTopNav({
       {items && (
         <nav className="main-links">
           {items.map((item, i) => {
-            if (item.kind === 'link') {
+            if (item.entryType === 'link') {
               return (
                 <div className="link" key={i}>
                   <a href={item.url} className="link__label">
@@ -23,7 +23,7 @@ export default function GlobalMenuTopNav({
                   </a>
                 </div>
               );
-            } else if (item.kind === 'group' && item.items) {
+            } else if (item.entryType === 'group' && item.items) {
               return (
                 <div
                   className="group cursor-pointer"
@@ -36,7 +36,7 @@ export default function GlobalMenuTopNav({
                 >
                   <div className="group__label">{item.label}</div>
                   <div
-                    className="subnav"
+                    className="sub-links"
                     style={{
                       display: activeItem === item.id ? 'flex' : 'none',
                     }}
