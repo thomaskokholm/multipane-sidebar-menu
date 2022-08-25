@@ -1,5 +1,4 @@
 import * as React from 'react';
-import GlobalMenuTopSubNav from './global-menu-top-sub-nav';
 
 export default function GlobalMenuTopNav({
   items,
@@ -15,10 +14,10 @@ export default function GlobalMenuTopNav({
       </button>
       {items && (
         <nav className="main-links">
-          {items.map((item, idx) => {
+          {items.map((item, i) => {
             if (item.kind === 'link') {
               return (
-                <div className="link">
+                <div className="link" key={i}>
                   <a href={item.url} className="link__label">
                     {item.label}
                   </a>
@@ -33,6 +32,7 @@ export default function GlobalMenuTopNav({
                   }}
                   onMouseEnter={(e) => setActiveItem(item.id)}
                   onMouseLeave={(e) => setActiveItem(undefined)}
+                  key={i}
                 >
                   <div className="group__label">{item.label}</div>
                   <div
@@ -42,9 +42,9 @@ export default function GlobalMenuTopNav({
                     }}
                   >
                     {item.items &&
-                      item.items.map((subItem) => {
+                      item.items.map((subItem, j) => {
                         return (
-                          <div className="link">
+                          <div className="link" key={j}>
                             <a href={subItem.url} className="link__label">
                               {subItem.label}
                             </a>

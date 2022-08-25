@@ -75,11 +75,13 @@ export default function GlobalMenuSidebarPane({ items, expanded = false }) {
   };
 
   const Pane = ({
+    idx,
     expanded = false,
     bgColor = '#03122b',
     className,
     children,
   }: {
+    idx?: string;
     expanded: boolean;
     bgColor?: string;
     className?: string | Array<string>;
@@ -94,6 +96,7 @@ export default function GlobalMenuSidebarPane({ items, expanded = false }) {
           backgroundColor: bgColor,
           display: expanded ? 'block' : 'none',
         }}
+        key={idx ?? idx}
       >
         <ul>{children}</ul>
       </div>
@@ -104,14 +107,16 @@ export default function GlobalMenuSidebarPane({ items, expanded = false }) {
     /* FIRST PANE CONTENT START */
   }
   return (
-    <Pane expanded={expanded} className="GlobalMenuSidebarFirstPane">
+    <Pane idx="0" expanded={expanded} className="GlobalMenuSidebarFirstPane">
       {items &&
         items.map((firstItem, i) => {
           return (
-            <PaneItem item={firstItem} idx={'A' + i} level={1}>
+            <PaneItem item={firstItem} key={'A' + i} idx={'A' + i} level={1}>
               {/* SECOND PANE CONTENT START */}
 
               <Pane
+                key={'A' + i}
+                idx={'A' + i}
                 className="GlobalMenuSidebarSecondPane"
                 expanded={
                   secondPaneActiveItem && secondPaneActiveItem === firstItem.id
@@ -123,6 +128,8 @@ export default function GlobalMenuSidebarPane({ items, expanded = false }) {
                       <PaneItem item={secondItem} idx={'B' + j} level={2}>
                         {/* THIRD PANE CONTENT  START */}
                         <Pane
+                          key={'B' + j}
+                          idx={'B' + j}
                           className="GlobalMenuSidebarThirdPane"
                           expanded={
                             thirdPaneActiveItem &&
@@ -133,6 +140,7 @@ export default function GlobalMenuSidebarPane({ items, expanded = false }) {
                             secondItem.items.map((thirdItem, k) => {
                               return (
                                 <PaneItem
+                                  key={'C' + k}
                                   item={thirdItem}
                                   idx={'C' + k}
                                   level={3}

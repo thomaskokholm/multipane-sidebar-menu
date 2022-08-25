@@ -5,8 +5,12 @@ export default function GlobalMenuBottomNav({ items }) {
     <div className="GlobalMenuBottomNav">
       {items && (
         <nav className="main-links">
-          {items.map((item) => {
-            return <div className="link">{item.label}</div>;
+          {items.map((item, i) => {
+            return (
+              <div className="link" key={i}>
+                {item.label}
+              </div>
+            );
           })}
         </nav>
       )}
