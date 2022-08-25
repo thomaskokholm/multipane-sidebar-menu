@@ -317,38 +317,6 @@ body {
   }
 }
 
-.GlobalMenuTopSubNav {
-  @media only screen and (min-width: 768px) {
-    display: none;
-  }
-  background: purple;
-  height: 64px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  line-height: 64px;
-
-  .main-links {
-    display: flex;
-    justify-content: flex-start;
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
-  .link {
-    color: #a5acbb;
-    &:hover {
-      color: #ffffff;
-    }
-    margin-left: 8px;
-    margin-right: 8px;
-  }
-}
-
 .GlobalMenuBottomNav {
   @media only screen and (min-width: 768px) {
     display: none;
