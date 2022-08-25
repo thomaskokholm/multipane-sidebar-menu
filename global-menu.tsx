@@ -5,7 +5,6 @@ import GlobalMenuTopNav from './global-menu-top-nav';
 
 export default function GlobalMenu() {
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
-
   const data = {
     menu: {
       items: [],
@@ -50,8 +49,35 @@ export default function GlobalMenu() {
         { kind: 'link', url: '#top', label: 'Link T6' },
         { kind: 'link', url: '#top', label: 'Link T7' },
         { kind: 'link', url: '#top', label: 'Link T8' },
-        { kind: 'link', url: '#top', label: 'Link T9' },
+        {
+          kind: 'group',
+          label: 'Group T9',
+          bgColor: '#0a71b4',
+          focusColor: '#3b8dc3',
+          items: [
+            { kind: 'link', url: '#top', label: 'Sub link S1' },
+            { kind: 'link', url: '#top', label: 'Sub link S2' },
+            { kind: 'link', url: '#top', label: 'Sub link S3' },
+            {
+              kind: 'link',
+              url: '#top',
+              label: 'Sub link S4 with a really long long long long label',
+            },
+            { kind: 'link', url: '#top', label: 'Sub link S5' },
+            { kind: 'link', url: '#top', label: 'Sub link S6' },
+            {
+              kind: 'link',
+              url: '#top',
+              label: 'Sub link S7 with a really long long long long label',
+            },
+            { kind: 'link', url: '#top', label: 'Sub link S8' },
+            { kind: 'link', url: '#top', label: 'Sub link S9' },
+            { kind: 'link', url: '#top', label: 'Sub link S10' },
+            { kind: 'link', url: '#top', label: 'Sub link S10' },
+          ],
+        },
         { kind: 'link', url: '#top', label: 'Link T10' },
+        { kind: 'link', url: '#top', label: 'Link T11' },
       ],
     },
     bottomNav: {
@@ -167,6 +193,23 @@ export default function GlobalMenu() {
     },
   };
 
+  const topNavItems = data.topNav.items;
+
+  data.topNav.items.map((item, i) => {
+    item['id'] = 'A' + i;
+    if (item.kind === 'group' && item.items) {
+      item.items.map((item, j) => {
+        item['id'] = 'B' + j;
+      });
+    }
+  });
+
+  const bottomNavItems = data.bottomNav.items;
+  data.bottomNav.items.map((item, i) => {
+    item['id'] = 'A' + i;
+  });
+
+  const sidebarItems = data.sidebar.items;
   data.sidebar.items.map((item, i) => {
     item['id'] = 'A' + i;
     if (item.kind === 'group' && item.items) {
@@ -180,10 +223,6 @@ export default function GlobalMenu() {
       });
     }
   });
-
-  const topNavItems = data.topNav.items;
-  const bottomNavItems = data.bottomNav.items;
-  const sidebarItems = data.sidebar.items;
 
   console.log('items', data);
 

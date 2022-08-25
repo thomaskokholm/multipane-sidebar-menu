@@ -276,13 +276,44 @@ body {
     }
   }
 
-  .link {
+  .link,
+  .group {
     color: #a5acbb;
     &:hover {
       color: #ffffff;
     }
     margin-left: 8px;
     margin-right: 8px;
+  }
+  .link {
+    a {
+      color: inherit;
+    }
+  }
+
+  .subnav {
+    display: none;
+    background-color: #550065;
+    position: absolute;
+    height: 40px;
+    left: 0;
+    right: 0;
+    top: 64px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    .link {
+      color: #f3b2ff;
+
+      line-height: 40px;
+      a {
+        color: inherit;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      &:hover {
+        color: #ffffff;
+      }
+    }
   }
 }
 
