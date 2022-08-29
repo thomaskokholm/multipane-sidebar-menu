@@ -1,9 +1,20 @@
 import * as React from 'react';
 import { useOnResize } from './useOnResize';
 
-export default function GlobalMenuSidebarPane({ items, expanded = false }) {
+interface NavigationThemme {
+  background: string;
+  textColor: string;
+  focusTextColor: string;
+  primary: string;
+  secondary: string;
+}
+
+export default function GlobalMenuSidebarPane({
+  items,
+  theme,
+  expanded = false,
+}) {
   const windowSize = useOnResize();
-  const bgColor = '#03122b';
   const [firstPaneActiveItem, setFirstPaneActiveItem] =
     React.useState<string>();
   const [secondPaneActiveItem, setSecondPaneActiveItem] =
@@ -38,11 +49,14 @@ export default function GlobalMenuSidebarPane({ items, expanded = false }) {
   const PaneItem = ({
     item,
     level,
+    theme,
     idx,
     children,
   }: {
     item: any;
     level: number;
+
+    theme?: NavigationThemme;
     idx: string;
     children?: React.ReactNode;
   }) => {
@@ -58,6 +72,9 @@ export default function GlobalMenuSidebarPane({ items, expanded = false }) {
         {item.entryType === 'group' && (
           <div
             className="group cursor-pointer"
+            style={{
+              backgroundColor: theme?.background,
+            }}
             onClick={() => {
               setPaneActive(level, item.id);
             }}
@@ -77,13 +94,13 @@ export default function GlobalMenuSidebarPane({ items, expanded = false }) {
   const Pane = ({
     idx,
     expanded = false,
-    bgColor = '#03122b',
+    theme,
     className,
     children,
   }: {
     idx?: string;
     expanded: boolean;
-    bgColor?: string;
+    theme?: NavigationThemme;
     className?: string | Array<string>;
     children?: React.ReactNode;
   }) => {
@@ -93,7 +110,7 @@ export default function GlobalMenuSidebarPane({ items, expanded = false }) {
           windowSize.width && windowSize.width >= 1024 ? 'expandable' : ''
         } `}
         style={{
-          backgroundColor: bgColor,
+          backgroundColor: theme?.background,
           display: expanded ? 'block' : 'none',
         }}
         key={idx ?? idx}
@@ -107,17 +124,29 @@ export default function GlobalMenuSidebarPane({ items, expanded = false }) {
     /* FIRST PANE CONTENT START */
   }
   return (
-    <Pane idx="0" expanded={expanded} className="GlobalMenuSidebarFirstPane">
+    <Pane
+      idx="0"
+      expanded={expanded}
+      className="GlobalMenuSidebarFirstPane"
+      theme={theme}
+    >
       {items &&
         items.map((firstItem, i) => {
           return (
-            <PaneItem item={firstItem} key={'A' + i} idx={'A' + i} level={1}>
+            <PaneItem
+              item={firstItem}
+              key={'A' + i}
+              idx={'A' + i}
+              level={1}
+              theme={firstItem.theme}
+            >
               {/* SECOND PANE CONTENT START */}
 
               <Pane
                 key={'A' + i}
                 idx={'A' + i}
                 className="GlobalMenuSidebarSecondPane"
+                theme={firstItem.theme}
                 expanded={
                   secondPaneActiveItem && secondPaneActiveItem === firstItem.id
                 }
@@ -131,6 +160,7 @@ export default function GlobalMenuSidebarPane({ items, expanded = false }) {
                           key={'B' + j}
                           idx={'B' + j}
                           className="GlobalMenuSidebarThirdPane"
+                          theme={secondItem.theme}
                           expanded={
                             thirdPaneActiveItem &&
                             thirdPaneActiveItem === secondItem.id

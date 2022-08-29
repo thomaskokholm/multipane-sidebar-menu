@@ -141,7 +141,7 @@ export default function GlobalMenu() {
           entryType: 'group',
           label: 'Group A5',
           theme: {
-            background: '#0a71b4',
+            background: 'red',
             textColor: '#cccccc',
             focusTextColor: '#ffffff',
             primary: '#3b8dc3',
@@ -295,7 +295,11 @@ export default function GlobalMenu() {
         items={topNavItems}
       />
 
-      <GlobalMenuSidebarPane expanded={sidebarOpen} items={sidebarItems} />
+      <GlobalMenuSidebarPane
+        expanded={sidebarOpen}
+        items={sidebarItems}
+        theme={data.burgerMenu.theme}
+      />
       <GlobalMenuBottomNav items={bottomNavItems} />
     </div>
   );

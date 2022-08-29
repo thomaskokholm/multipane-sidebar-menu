@@ -135,12 +135,12 @@ body {
   cursor: pointer;
 }
 .GlobalMenu {
-  background-color: #03122b;
+  background-color: #000;
   color: #ffffff;
   height: 48px;
 }
 .GlobalMenuSidebarPane {
-  background-color: #03122b;
+  background-color: #000;
   position: fixed;
   top: 56px;
   left: 0;
@@ -248,7 +248,7 @@ body {
 }
 
 .GlobalMenuTopNav {
-  background: #03122b;
+  background: #000;
   height: 56px;
   position: fixed;
   top: 0;
@@ -334,7 +334,7 @@ body {
     display: none;
   }
   border-top: 1px solid #505b73;
-  background: #03122b;
+  background: #000;
   height: 64px;
   position: fixed;
   bottom: 0;
@@ -369,3 +369,5 @@ body {
     margin: 0 auto 24px auto;
   }
 }
+
+// dark blue color: #03122b
