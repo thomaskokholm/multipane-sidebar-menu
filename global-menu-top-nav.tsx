@@ -29,6 +29,11 @@ export default function GlobalMenuTopNav({
           <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
       </button>
+      <img
+        src="https://raw.githubusercontent.com/thomaskokholm/multipane-sidebar-menu/c8a96c385046c48ac1db043190b956e2108dc42d/FIFAPlus_Logo.png"
+        width="83px"
+        height="21px"
+      />
       {items && (
         <nav className="main-links">
           {items.map((item, i) => {

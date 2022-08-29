@@ -257,6 +257,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: center;
   line-height: 56px;
 
   @media only screen and (min-width: 768px) {
@@ -323,6 +324,7 @@ body {
     background: transparent;
     border: 0;
     color: #ffffff;
+    cursor: pointer;
   }
 }
 
