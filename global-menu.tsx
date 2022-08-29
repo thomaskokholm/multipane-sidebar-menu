@@ -6,10 +6,13 @@ import GlobalMenuTopNav from './global-menu-top-nav';
 export default function GlobalMenu() {
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
   const data = {
-    menu: {
-      items: [],
-    },
     topNav: {
+      theme: {
+        background: '#0a71b4',
+        textColor: '#ffffff',
+        primary: '#3b8dc3',
+        secondary: '#0a71b4',
+      },
       quickLinks: [
         { entryType: 'link', url: '#top', label: 'Link Q1', target: '_self' },
         { entryType: 'link', url: '#top', label: 'Link Q1' },
@@ -27,8 +30,12 @@ export default function GlobalMenu() {
         {
           entryType: 'group',
           label: 'Group T5',
-          bgColor: '#0a71b4',
-          focusColor: '#3b8dc3',
+          theme: {
+            background: '#0a71b4',
+            textColor: '#ffffff',
+            primary: '#3b8dc3',
+            secondary: '#0a71b4',
+          },
           items: [
             { entryType: 'link', url: '#top', label: 'Sub link S1' },
             { entryType: 'link', url: '#top', label: 'Sub link S2' },
@@ -57,8 +64,12 @@ export default function GlobalMenu() {
         {
           entryType: 'group',
           label: 'Group T9',
-          bgColor: '#0a71b4',
-          focusColor: '#3b8dc3',
+          theme: {
+            background: '#0a71b4',
+            textColor: '#ffffff',
+            primary: '#3b8dc3',
+            secondary: '#0a71b4',
+          },
           items: [
             { entryType: 'link', url: '#top', label: 'Sub link S1' },
             { entryType: 'link', url: '#top', label: 'Sub link S2' },
@@ -86,6 +97,12 @@ export default function GlobalMenu() {
       ],
     },
     bottomNav: {
+      theme: {
+        background: '#0a71b4',
+        textColor: '#ffffff',
+        primary: '#3b8dc3',
+        secondary: '#0a71b4',
+      },
       items: [
         { entryType: 'link', url: '#top', label: 'Link S1' },
         {
@@ -98,10 +115,14 @@ export default function GlobalMenu() {
         { entryType: 'link', url: '#top', label: 'Link 54' },
       ],
     },
-    sidebar: {
+    burgerMenu: {
+      theme: {
+        background: '#0a71b4',
+        textColor: '#ffffff',
+        primary: '#3b8dc3',
+        secondary: '#0a71b4',
+      },
       backLabel: 'Back',
-      bgColor: '#03122b',
-      focusColor: '#0a71b4',
       items: [
         { entryType: 'link', url: '#top', label: 'Link A1' },
         {
@@ -114,8 +135,12 @@ export default function GlobalMenu() {
         {
           entryType: 'group',
           label: 'Group A5',
-          bgColor: '#0a71b4',
-          focusColor: '#3b8dc3',
+          theme: {
+            background: '#0a71b4',
+            textColor: '#ffffff',
+            primary: '#3b8dc3',
+            secondary: '#0a71b4',
+          },
           items: [
             { entryType: 'link', url: '#top', label: 'Link B1' },
             { entryType: 'link', url: '#top', label: 'Link B2' },
@@ -123,8 +148,12 @@ export default function GlobalMenu() {
               entryType: 'group',
               label:
                 'Group B3 jd sfjkj kf dsfjfjkf df dg d gfd gfd gsdff ergfd gf dg ',
-              bgColor: '#3b8dc3',
-              focusColor: '#0a71b4',
+              theme: {
+                background: '#0a71b4',
+                textColor: '#ffffff',
+                primary: '#3b8dc3',
+                secondary: '#0a71b4',
+              },
               items: [
                 { entryType: 'link', url: '#top', label: 'Link C1' },
                 { entryType: 'link', url: '#top', label: 'Link C2' },
@@ -140,8 +169,12 @@ export default function GlobalMenu() {
         {
           entryType: 'group',
           label: 'Group A7',
-          bgColor: '#0a71b4',
-          focusColor: '#3b8dc3',
+          theme: {
+            background: '#0a71b4',
+            textColor: '#ffffff',
+            primary: '#3b8dc3',
+            secondary: '#0a71b4',
+          },
           items: [
             { entryType: 'link', url: '#top', label: 'Link B1' },
             { entryType: 'link', url: '#top', label: 'Link B2' },
@@ -150,8 +183,12 @@ export default function GlobalMenu() {
             {
               entryType: 'group',
               label: 'Group B5',
-              bgColor: '#3b8dc3',
-              focusColor: '#0a71b4',
+              theme: {
+                background: '#0a71b4',
+                textColor: '#ffffff',
+                primary: '#3b8dc3',
+                secondary: '#0a71b4',
+              },
               items: [
                 { entryType: 'link', url: '#top', label: 'Link C1' },
                 { entryType: 'link', url: '#top', label: 'Link C2' },
@@ -164,8 +201,12 @@ export default function GlobalMenu() {
         {
           entryType: 'group',
           label: 'Group A9',
-          bgColor: '#3b8dc3',
-          focusColor: '#0a71b4',
+          theme: {
+            background: '#0a71b4',
+            textColor: '#ffffff',
+            primary: '#3b8dc3',
+            secondary: '#0a71b4',
+          },
           items: [
             { entryType: 'link', url: '#top', label: 'Link C1' },
             { entryType: 'link', url: '#top', label: 'Link C2' },
@@ -177,8 +218,12 @@ export default function GlobalMenu() {
         {
           entryType: 'group',
           label: 'Group A10',
-          bgColor: '#3b8dc3',
-          focusColor: '#0a71b4',
+          theme: {
+            background: '#0a71b4',
+            textColor: '#ffffff',
+            primary: '#3b8dc3',
+            secondary: '#0a71b4',
+          },
           items: [
             { entryType: 'link', url: '#top', label: 'Link C1' },
             { entryType: 'link', url: '#top', label: 'Link C2' },
@@ -214,8 +259,8 @@ export default function GlobalMenu() {
     item['id'] = 'A' + i;
   });
 
-  const sidebarItems = data.sidebar.items;
-  data.sidebar.items.map((item, i) => {
+  const sidebarItems = data.burgerMenu.items;
+  data.burgerMenu.items.map((item, i) => {
     item['id'] = 'A' + i;
     if (item.entryType === 'group' && item.items) {
       item.items.map((item, j) => {
