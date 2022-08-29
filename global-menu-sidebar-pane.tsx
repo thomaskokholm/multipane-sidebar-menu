@@ -120,9 +120,6 @@ export default function GlobalMenuSidebarPane({
     );
   };
 
-  {
-    /* FIRST PANE CONTENT START */
-  }
   return (
     <Pane
       idx="0"
@@ -140,8 +137,6 @@ export default function GlobalMenuSidebarPane({
               level={1}
               theme={firstItem.theme}
             >
-              {/* SECOND PANE CONTENT START */}
-
               <Pane
                 key={'A' + i}
                 idx={'A' + i}
@@ -155,7 +150,6 @@ export default function GlobalMenuSidebarPane({
                   firstItem.items.map((secondItem, j) => {
                     return (
                       <PaneItem item={secondItem} idx={'B' + j} level={2}>
-                        {/* THIRD PANE CONTENT  START */}
                         <Pane
                           key={'B' + j}
                           idx={'B' + j}
@@ -178,18 +172,13 @@ export default function GlobalMenuSidebarPane({
                               );
                             })}
                         </Pane>
-                        {/* THIRD PANE CONTENT  END */}
                       </PaneItem>
                     );
                   })}
               </Pane>
-              {/* SECOND PANE CONTENT  END */}
             </PaneItem>
           );
         })}
     </Pane>
   );
-  {
-    /* FIRST PANE CONTENT  END */
-  }
 }
