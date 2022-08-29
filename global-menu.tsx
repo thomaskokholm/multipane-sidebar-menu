@@ -9,7 +9,8 @@ export default function GlobalMenu() {
     topNav: {
       theme: {
         background: '#0a71b4',
-        textColor: '#ffffff',
+        textColor: '#cccccc',
+        focusTextColor: '#ffffff',
         primary: '#3b8dc3',
         secondary: '#0a71b4',
       },
@@ -32,7 +33,8 @@ export default function GlobalMenu() {
           label: 'Group T5',
           theme: {
             background: '#0a71b4',
-            textColor: '#ffffff',
+            textColor: '#cccccc',
+            focusTextColor: '#ffffff',
             primary: '#3b8dc3',
             secondary: '#0a71b4',
           },
@@ -66,7 +68,8 @@ export default function GlobalMenu() {
           label: 'Group T9',
           theme: {
             background: '#0a71b4',
-            textColor: '#ffffff',
+            textColor: '#cccccc',
+            focusTextColor: '#ffffff',
             primary: '#3b8dc3',
             secondary: '#0a71b4',
           },
@@ -99,7 +102,8 @@ export default function GlobalMenu() {
     bottomNav: {
       theme: {
         background: '#0a71b4',
-        textColor: '#ffffff',
+        textColor: '#cccccc',
+        focusTextColor: '#ffffff',
         primary: '#3b8dc3',
         secondary: '#0a71b4',
       },
@@ -118,7 +122,8 @@ export default function GlobalMenu() {
     burgerMenu: {
       theme: {
         background: '#0a71b4',
-        textColor: '#ffffff',
+        textColor: '#cccccc',
+        focusTextColor: '#ffffff',
         primary: '#3b8dc3',
         secondary: '#0a71b4',
       },
@@ -137,7 +142,8 @@ export default function GlobalMenu() {
           label: 'Group A5',
           theme: {
             background: '#0a71b4',
-            textColor: '#ffffff',
+            textColor: '#cccccc',
+            focusTextColor: '#ffffff',
             primary: '#3b8dc3',
             secondary: '#0a71b4',
           },
@@ -150,7 +156,8 @@ export default function GlobalMenu() {
                 'Group B3 jd sfjkj kf dsfjfjkf df dg d gfd gfd gsdff ergfd gf dg ',
               theme: {
                 background: '#0a71b4',
-                textColor: '#ffffff',
+                textColor: '#cccccc',
+                focusTextColor: '#ffffff',
                 primary: '#3b8dc3',
                 secondary: '#0a71b4',
               },
@@ -171,7 +178,8 @@ export default function GlobalMenu() {
           label: 'Group A7',
           theme: {
             background: '#0a71b4',
-            textColor: '#ffffff',
+            textColor: '#cccccc',
+            focusTextColor: '#ffffff',
             primary: '#3b8dc3',
             secondary: '#0a71b4',
           },
@@ -185,7 +193,8 @@ export default function GlobalMenu() {
               label: 'Group B5',
               theme: {
                 background: '#0a71b4',
-                textColor: '#ffffff',
+                textColor: '#cccccc',
+                focusTextColor: '#ffffff',
                 primary: '#3b8dc3',
                 secondary: '#0a71b4',
               },
@@ -203,7 +212,8 @@ export default function GlobalMenu() {
           label: 'Group A9',
           theme: {
             background: '#0a71b4',
-            textColor: '#ffffff',
+            textColor: '#cccccc',
+            focusTextColor: '#ffffff',
             primary: '#3b8dc3',
             secondary: '#0a71b4',
           },
@@ -220,7 +230,8 @@ export default function GlobalMenu() {
           label: 'Group A10',
           theme: {
             background: '#0a71b4',
-            textColor: '#ffffff',
+            textColor: '#cccccc',
+            focusTextColor: '#ffffff',
             primary: '#3b8dc3',
             secondary: '#0a71b4',
           },

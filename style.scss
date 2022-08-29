@@ -280,6 +280,7 @@ body {
   .link,
   .group {
     color: #a5acbb;
+    white-space: nowrap;
     &:hover {
       color: #ffffff;
     }
