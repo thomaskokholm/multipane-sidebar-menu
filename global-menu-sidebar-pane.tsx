@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useOnResize } from './useOnResize';
-import { css, cx } from '@emotion/css';
+import { css } from '@emotion/css';
 
 interface NavigationThemme {
   background: string;

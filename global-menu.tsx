@@ -35,8 +35,8 @@ export default function GlobalMenu() {
           entryType: 'group',
           label: 'Group T5',
           theme: {
-            background: '#0a71b4',
-            textColor: '#A5ACBB',
+            background: '#550065',
+            textColor: '#ccb2d1',
             focusTextColor: '#ffffff',
             primary: '#3b8dc3',
             secondary: '#0a71b4',
@@ -296,6 +296,7 @@ export default function GlobalMenu() {
         sidebarOpen={sidebarOpen}
         setSidebarOpen={setSidebarOpen}
         items={topNavItems}
+        theme={data.topNav.theme}
       />
 
       <GlobalMenuSidebarPane
@@ -303,7 +304,7 @@ export default function GlobalMenu() {
         items={sidebarItems}
         theme={data.burgerMenu.theme}
       />
-      <GlobalMenuBottomNav items={bottomNavItems} />
+      <GlobalMenuBottomNav items={bottomNavItems} theme={data.topNav.theme} />
     </div>
   );
 }

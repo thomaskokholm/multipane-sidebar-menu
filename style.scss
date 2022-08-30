@@ -138,6 +138,9 @@ body {
   background-color: #000;
   color: #ffffff;
   height: 48px;
+  a {
+    text-decoration: none;
+  }
 }
 .GlobalMenuSidebarPane {
   //background-color: #000;
@@ -240,7 +243,6 @@ body {
 }
 
 .GlobalMenuTopNav {
-  background: #000;
   height: 56px;
   position: fixed;
   top: 0;
@@ -271,7 +273,6 @@ body {
 
   .link,
   .group {
-    color: #a5acbb;
     white-space: nowrap;
     margin-left: 8px;
     margin-right: 8px;
@@ -286,8 +287,8 @@ body {
   }
 
   .sub-links {
-    display: none;
-    background-color: #550065;
+    //display: none;
+    //background-color: #550065;
     position: absolute;
     height: 40px;
     left: 0;
@@ -296,17 +297,11 @@ body {
     overflow-x: auto;
     overflow-y: hidden;
     .link {
-      //color: #f3b2ff;
-
       line-height: 40px;
       a {
-        //color: inherit;
         text-overflow: ellipsis;
         white-space: nowrap;
       }
-      /* &:hover {
-        color: #ffffff;
-      } */
     }
   }
 
