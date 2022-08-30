@@ -168,6 +168,7 @@ export default function GlobalMenuSidebarPane({
                       <PaneItem
                         item={secondItem}
                         idx={'B' + j}
+                        key={'B' + j}
                         level={2}
                         theme={secondItem.theme ?? firstItem.theme ?? theme}
                       >
