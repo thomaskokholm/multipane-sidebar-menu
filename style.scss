@@ -176,7 +176,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    color: #a5acbb;
+    color: inherit;
     line-height: 48px;
     &:hover {
       color: #ffffff;
@@ -185,7 +185,7 @@ body {
   .link {
     overflow: hidden;
     &__label {
-      color: #a5acbb;
+      color: inherit;
       &:hover {
         color: #ffffff;
       }

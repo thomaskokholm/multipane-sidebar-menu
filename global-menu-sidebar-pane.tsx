@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useOnResize } from './useOnResize';
+import { css, cx } from '@emotion/css';
 
 interface NavigationThemme {
   background: string;
@@ -71,10 +72,10 @@ export default function GlobalMenuSidebarPane({
         )}
         {item.entryType === 'group' && (
           <div
-            className="group cursor-pointer"
-            style={{
-              backgroundColor: theme?.background,
-            }}
+            className={`group cursor-pointer ${css`
+            background-color: ${theme?.background};
+            color: ${theme?.textColor};
+          `}`}
             onClick={() => {
               setPaneActive(level, item.id);
             }}
@@ -106,13 +107,16 @@ export default function GlobalMenuSidebarPane({
   }) => {
     return (
       <div
+        /* className={`GlobalMenuSidebarPane ${className} ${
+          windowSize.width && windowSize.width >= 1024 ? 'expandable' : ''
+        } `} */
         className={`GlobalMenuSidebarPane ${className} ${
           windowSize.width && windowSize.width >= 1024 ? 'expandable' : ''
-        } `}
-        style={{
-          backgroundColor: theme?.background,
-          display: expanded ? 'block' : 'none',
-        }}
+        } ${css`
+        background-color: ${theme?.background};
+        color: ${theme?.textColor};
+        display: ${expanded ? 'block' : 'none'};
+      `}`}
         key={idx ?? idx}
       >
         <ul>{children}</ul>

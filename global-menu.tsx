@@ -3,6 +3,8 @@ import GlobalMenuBottomNav from './global-menu-bottom-nav';
 import GlobalMenuSidebarPane from './global-menu-sidebar-pane';
 import GlobalMenuTopNav from './global-menu-top-nav';
 
+// dark blue = #03122B
+// purple = #550065
 export default function GlobalMenu() {
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
   const data = {
@@ -121,7 +123,7 @@ export default function GlobalMenu() {
     },
     burgerMenu: {
       theme: {
-        background: '#0a71b4',
+        background: '#03122B',
         textColor: '#cccccc',
         focusTextColor: '#ffffff',
         primary: '#3b8dc3',
@@ -141,8 +143,8 @@ export default function GlobalMenu() {
           entryType: 'group',
           label: 'Group A5',
           theme: {
-            background: 'red',
-            textColor: '#cccccc',
+            background: '#550065',
+            textColor: '#f3b2ff',
             focusTextColor: '#ffffff',
             primary: '#3b8dc3',
             secondary: '#0a71b4',
@@ -155,8 +157,8 @@ export default function GlobalMenu() {
               label:
                 'Group B3 jd sfjkj kf dsfjfjkf df dg d gfd gfd gsdff ergfd gf dg ',
               theme: {
-                background: '#0a71b4',
-                textColor: '#cccccc',
+                background: '#663399',
+                textColor: '#f3b2ff',
                 focusTextColor: '#ffffff',
                 primary: '#3b8dc3',
                 secondary: '#0a71b4',
@@ -211,7 +213,7 @@ export default function GlobalMenu() {
           entryType: 'group',
           label: 'Group A9',
           theme: {
-            background: '#0a71b4',
+            background: '#03122B',
             textColor: '#cccccc',
             focusTextColor: '#ffffff',
             primary: '#3b8dc3',
@@ -229,7 +231,7 @@ export default function GlobalMenu() {
           entryType: 'group',
           label: 'Group A10',
           theme: {
-            background: '#0a71b4',
+            background: '#03122B',
             textColor: '#cccccc',
             focusTextColor: '#ffffff',
             primary: '#3b8dc3',
