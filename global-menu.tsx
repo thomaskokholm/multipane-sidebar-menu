@@ -4,6 +4,7 @@ import GlobalMenuSidebarPane from './global-menu-sidebar-pane';
 import GlobalMenuTopNav from './global-menu-top-nav';
 
 // dark blue = #03122B
+// grey = #A5ACBB
 // purple = #550065
 export default function GlobalMenu() {
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
@@ -124,8 +125,8 @@ export default function GlobalMenu() {
     burgerMenu: {
       theme: {
         background: '#03122B',
-        textColor: 'lime',
-        focusTextColor: 'blue',
+        textColor: '#A5ACBB',
+        focusTextColor: '#FFFFFF',
         primary: '#3b8dc3',
         secondary: '#0a71b4',
       },
