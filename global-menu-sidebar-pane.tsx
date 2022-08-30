@@ -62,10 +62,23 @@ export default function GlobalMenuSidebarPane({
     children?: React.ReactNode;
   }) => {
     return (
-      <li key={idx}>
+      <li
+        key={idx}
+        className={`${css`
+      background-color: ${theme?.background};
+    `}`}
+      >
         {item.entryType === 'link' && (
-          <div className="link">
-            <a href={item.url} className="link__label">
+          <div className={`link`}>
+            <a
+              href={item.url}
+              className={`link__label ${css`
+          color: ${theme?.textColor};
+          &:hover {
+            color: ${theme?.focusTextColor};
+          }
+        `}`}
+            >
               {item.label}
             </a>
           </div>
@@ -73,8 +86,10 @@ export default function GlobalMenuSidebarPane({
         {item.entryType === 'group' && (
           <div
             className={`group cursor-pointer ${css`
-            background-color: ${theme?.background};
             color: ${theme?.textColor};
+            &:hover {
+              color: ${theme?.focusTextColor};
+            }
           `}`}
             onClick={() => {
               setPaneActive(level, item.id);
@@ -107,9 +122,6 @@ export default function GlobalMenuSidebarPane({
   }) => {
     return (
       <div
-        /* className={`GlobalMenuSidebarPane ${className} ${
-          windowSize.width && windowSize.width >= 1024 ? 'expandable' : ''
-        } `} */
         className={`GlobalMenuSidebarPane ${className} ${
           windowSize.width && windowSize.width >= 1024 ? 'expandable' : ''
         } ${css`
@@ -139,13 +151,13 @@ export default function GlobalMenuSidebarPane({
               key={'A' + i}
               idx={'A' + i}
               level={1}
-              theme={firstItem.theme}
+              theme={firstItem.theme ?? theme}
             >
               <Pane
                 key={'A' + i}
                 idx={'A' + i}
                 className="GlobalMenuSidebarSecondPane"
-                theme={firstItem.theme}
+                theme={firstItem.theme ?? theme}
                 expanded={
                   secondPaneActiveItem && secondPaneActiveItem === firstItem.id
                 }
@@ -153,12 +165,17 @@ export default function GlobalMenuSidebarPane({
                 {firstItem.items &&
                   firstItem.items.map((secondItem, j) => {
                     return (
-                      <PaneItem item={secondItem} idx={'B' + j} level={2}>
+                      <PaneItem
+                        item={secondItem}
+                        idx={'B' + j}
+                        level={2}
+                        theme={secondItem.theme ?? firstItem.theme ?? theme}
+                      >
                         <Pane
                           key={'B' + j}
                           idx={'B' + j}
                           className="GlobalMenuSidebarThirdPane"
-                          theme={secondItem.theme}
+                          theme={secondItem.theme ?? firstItem.theme ?? theme}
                           expanded={
                             thirdPaneActiveItem &&
                             thirdPaneActiveItem === secondItem.id
@@ -172,6 +189,12 @@ export default function GlobalMenuSidebarPane({
                                   item={thirdItem}
                                   idx={'C' + k}
                                   level={3}
+                                  theme={
+                                    thirdItem.theme ??
+                                    secondItem.theme ??
+                                    firstItem.theme ??
+                                    theme
+                                  }
                                 />
                               );
                             })}

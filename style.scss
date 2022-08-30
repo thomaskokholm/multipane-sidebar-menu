@@ -140,7 +140,7 @@ body {
   height: 48px;
 }
 .GlobalMenuSidebarPane {
-  background-color: #000;
+  //background-color: #000;
   position: fixed;
   top: 56px;
   left: 0;
@@ -176,19 +176,11 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    color: inherit;
     line-height: 48px;
-    &:hover {
-      color: #ffffff;
-    }
   }
   .link {
     overflow: hidden;
     &__label {
-      color: inherit;
-      &:hover {
-        color: #ffffff;
-      }
       width: 100%;
       margin-right: 24px;
     }
@@ -281,17 +273,14 @@ body {
   .group {
     color: #a5acbb;
     white-space: nowrap;
-    &:hover {
-      color: #ffffff;
-    }
     margin-left: 8px;
     margin-right: 8px;
   }
-  .link {
+  /* .link {
     a {
       color: inherit;
     }
-  }
+  } */
 
   .quick-links {
   }
@@ -307,17 +296,17 @@ body {
     overflow-x: auto;
     overflow-y: hidden;
     .link {
-      color: #f3b2ff;
+      //color: #f3b2ff;
 
       line-height: 40px;
       a {
-        color: inherit;
+        //color: inherit;
         text-overflow: ellipsis;
         white-space: nowrap;
       }
-      &:hover {
+      /* &:hover {
         color: #ffffff;
-      }
+      } */
     }
   }
 
@@ -355,10 +344,10 @@ body {
 
   .link {
     min-width: 75px; // 375px (min supported width of viewport devided by 5 items = 75px
-    color: #a5acbb;
+    /* color: #a5acbb;
     &:hover {
       color: #ffffff;
-    }
+    } */
   }
 }
 
