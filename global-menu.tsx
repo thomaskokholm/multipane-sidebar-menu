@@ -11,7 +11,7 @@ export default function GlobalMenu() {
   const data = {
     topNav: {
       theme: {
-        background: '#0a71b4',
+        background: '#03122B',
         textColor: '#A5ACBB',
         focusTextColor: '#ffffff',
         primary: '#3b8dc3',
@@ -248,8 +248,18 @@ export default function GlobalMenu() {
             secondary: '#0a71b4',
           },
           items: [
-            { entryType: 'link', url: '#top', label: 'Link B1', target: '_self' },
-            { entryType: 'link', url: '#top', label: 'Link B2', target: '_self' },
+            {
+              entryType: 'link',
+              url: '#top',
+              label: 'Link B1',
+              target: '_self',
+            },
+            {
+              entryType: 'link',
+              url: '#top',
+              label: 'Link B2',
+              target: '_self',
+            },
             {
               entryType: 'group',
               label:
@@ -262,12 +272,42 @@ export default function GlobalMenu() {
                 secondary: '#0a71b4',
               },
               items: [
-                { entryType: 'link', url: '#top', label: 'Link C1', target: '_self' },
-                { entryType: 'link', url: '#top', label: 'Link C2', target: '_self' },
-                { entryType: 'link', url: '#top', label: 'Link C3', target: '_self' },
-                { entryType: 'link', url: '#top', label: 'Link C4', target: '_self' },
-                { entryType: 'link', url: '#top', label: 'Link C5', target: '_self' },
-                { entryType: 'link', url: '#top', label: 'Link C6', target: '_self' },
+                {
+                  entryType: 'link',
+                  url: '#top',
+                  label: 'Link C1',
+                  target: '_self',
+                },
+                {
+                  entryType: 'link',
+                  url: '#top',
+                  label: 'Link C2',
+                  target: '_self',
+                },
+                {
+                  entryType: 'link',
+                  url: '#top',
+                  label: 'Link C3',
+                  target: '_self',
+                },
+                {
+                  entryType: 'link',
+                  url: '#top',
+                  label: 'Link C4',
+                  target: '_self',
+                },
+                {
+                  entryType: 'link',
+                  url: '#top',
+                  label: 'Link C5',
+                  target: '_self',
+                },
+                {
+                  entryType: 'link',
+                  url: '#top',
+                  label: 'Link C6',
+                  target: '_self',
+                },
               ],
             },
           ],
@@ -284,10 +324,30 @@ export default function GlobalMenu() {
             secondary: '#0a71b4',
           },
           items: [
-            { entryType: 'link', url: '#top', label: 'Link B1', target: '_self' },
-            { entryType: 'link', url: '#top', label: 'Link B2', target: '_self' },
-            { entryType: 'link', url: '#top', label: 'Link B3', target: '_self' },
-            { entryType: 'link', url: '#top', label: 'Link B4', target: '_self' },
+            {
+              entryType: 'link',
+              url: '#top',
+              label: 'Link B1',
+              target: '_self',
+            },
+            {
+              entryType: 'link',
+              url: '#top',
+              label: 'Link B2',
+              target: '_self',
+            },
+            {
+              entryType: 'link',
+              url: '#top',
+              label: 'Link B3',
+              target: '_self',
+            },
+            {
+              entryType: 'link',
+              url: '#top',
+              label: 'Link B4',
+              target: '_self',
+            },
             {
               entryType: 'group',
               label: 'Group B5',
@@ -299,9 +359,24 @@ export default function GlobalMenu() {
                 secondary: '#0a71b4',
               },
               items: [
-                { entryType: 'link', url: '#top', label: 'Link C1', target: '_self' },
-                { entryType: 'link', url: '#top', label: 'Link C2', target: '_self' },
-                { entryType: 'link', url: '#top', label: 'Link C3', target: '_self' },
+                {
+                  entryType: 'link',
+                  url: '#top',
+                  label: 'Link C1',
+                  target: '_self',
+                },
+                {
+                  entryType: 'link',
+                  url: '#top',
+                  label: 'Link C2',
+                  target: '_self',
+                },
+                {
+                  entryType: 'link',
+                  url: '#top',
+                  label: 'Link C3',
+                  target: '_self',
+                },
               ],
             },
           ],
@@ -318,11 +393,36 @@ export default function GlobalMenu() {
             secondary: '#0a71b4',
           },
           items: [
-            { entryType: 'link', url: '#top', label: 'Link C1', target: '_self' },
-            { entryType: 'link', url: '#top', label: 'Link C2', target: '_self' },
-            { entryType: 'link', url: '#top', label: 'Link C3', target: '_self' },
-            { entryType: 'link', url: '#top', label: 'Link C4', target: '_self' },
-            { entryType: 'link', url: '#top', label: 'Link C5', target: '_self' },
+            {
+              entryType: 'link',
+              url: '#top',
+              label: 'Link C1',
+              target: '_self',
+            },
+            {
+              entryType: 'link',
+              url: '#top',
+              label: 'Link C2',
+              target: '_self',
+            },
+            {
+              entryType: 'link',
+              url: '#top',
+              label: 'Link C3',
+              target: '_self',
+            },
+            {
+              entryType: 'link',
+              url: '#top',
+              label: 'Link C4',
+              target: '_self',
+            },
+            {
+              entryType: 'link',
+              url: '#top',
+              label: 'Link C5',
+              target: '_self',
+            },
           ],
         },
         {
@@ -336,8 +436,18 @@ export default function GlobalMenu() {
             secondary: '#0a71b4',
           },
           items: [
-            { entryType: 'link', url: '#top', label: 'Link C1', target: '_self' },
-            { entryType: 'link', url: '#top', label: 'Link C2', target: '_self' },
+            {
+              entryType: 'link',
+              url: '#top',
+              label: 'Link C1',
+              target: '_self',
+            },
+            {
+              entryType: 'link',
+              url: '#top',
+              label: 'Link C2',
+              target: '_self',
+            },
           ],
         },
         { entryType: 'link', url: '#top', label: 'Link A11', target: '_self' },
